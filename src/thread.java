@@ -101,15 +101,31 @@ public class thread {
         	    
                 String sentence = new String( receivePacket.getData());
                 
-                System.out.println("RECEIVED: " + sentence);
+              
+                System.out.println("Received: " + sentence);
                 
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port = receivePacket.getPort();
+                /*
+                DatagramSocket datagramSocket = new DatagramSocket();
+
+                byte[] buffer = "0123456789".getBytes();
+                InetAddress receiverAddress = InetAddress.getLocalHost();
+
+                DatagramPacket packet = new DatagramPacket(
+                        buffer, buffer.length, IPAddress, port);
+                datagramSocket.send(packet);
+                */
+              
                 
-                String capitalizedSentence = sentence.toUpperCase();
+                String capitalizedSentence = "lapdroid:---- "+sentence.toUpperCase();
                 sendData = capitalizedSentence.getBytes();
+                
+                System.out.println("se enviara: "+capitalizedSentence);
+                
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                 socket.send(sendPacket);
+
              }
 	  
 	  
