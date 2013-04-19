@@ -91,8 +91,8 @@ public class thread {
 		    
 	
  
-          byte[] receiveData = new byte[1024];
-          byte[] sendData = new byte[1024];
+          byte[] receiveData = new byte[6024];
+         // byte[] sendData = new byte[1024];
           while(true)
              {
         	  System.out.println("Lapdroid: Listening ...");
@@ -115,17 +115,17 @@ public class thread {
                 DatagramPacket packet = new DatagramPacket(
                         buffer, buffer.length, IPAddress, port);
                 datagramSocket.send(packet);
-                */
+              
               
                 
-                String capitalizedSentence = "lapdroid:---- "+sentence.toUpperCase();
+                String capitalizedSentence = "PC-"+sentence.toUpperCase();
                 sendData = capitalizedSentence.getBytes();
                 
                 System.out.println("se enviara: "+capitalizedSentence);
                 
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
                 socket.send(sendPacket);
-
+  */
              }
 	  
 	  
