@@ -106,17 +106,17 @@ public class thread {
                 
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port = receivePacket.getPort();
-                /*
+         
                 DatagramSocket datagramSocket = new DatagramSocket();
 
                 byte[] buffer = "0123456789".getBytes();
-                InetAddress receiverAddress = InetAddress.getLocalHost();
+        
 
                 DatagramPacket packet = new DatagramPacket(
-                        buffer, buffer.length, IPAddress, port);
+                buffer, buffer.length, IPAddress, port);
                 datagramSocket.send(packet);
               
-              
+                /*s
                 
                 String capitalizedSentence = "PC-"+sentence.toUpperCase();
                 sendData = capitalizedSentence.getBytes();
