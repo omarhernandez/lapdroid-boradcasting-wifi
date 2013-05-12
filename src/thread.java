@@ -106,29 +106,32 @@ public class thread {
                 
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port = receivePacket.getPort();
-         
+              
+                for(int i=0;i<10;i++){
                 DatagramSocket datagramSocket = new DatagramSocket();
 
                 byte[] buffer = "0123456789".getBytes();
         
-
+                System.out.println("se enviara algo 0123456789 "+IPAddress);
+                
                 DatagramPacket packet = new DatagramPacket(
                 buffer, buffer.length, IPAddress, port);
                 datagramSocket.send(packet);
-              
-                /*s
-                
-                String capitalizedSentence = "PC-"+sentence.toUpperCase();
-                sendData = capitalizedSentence.getBytes();
-                
-                System.out.println("se enviara: "+capitalizedSentence);
-                
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-                socket.send(sendPacket);
-  */
+                }
+                /*
+                for(int i=0;i<50;i++){
+                    String capitalizedSentence = "PC-"+sentence.toUpperCase();
+                    byte[] sendData = capitalizedSentence.getBytes();
+                    
+                    System.out.println("se enviara: "+capitalizedSentence);
+                    
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+                    socket.send(sendPacket);
+                 	}
+                */
+
              }
-	  
-	  
+	 
 	  }
 	
 	
